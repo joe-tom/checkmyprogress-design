@@ -1,0 +1,89 @@
+html
+    head
+        link(rel="stylesheet" href="./login.css")
+    body
+        #login__container
+            form.login__wrap(v-on:submit.prevent="login")
+              div.login__schoolWrap
+                each school in ["Abbotsford","Central Okanagan","Independent","International","Kamloops","Maple Ridge","Okanagan Skaha","Universities","Upper Grand District School Board","Vancouver"]
+                  div.login__school=school
+              div.login__userWrap
+                div(@click="select('s')" v-bind:id="{'login__user--active':account == 's'}").login__user Student
+                div(@click="select('t')" v-bind:id="{'login__user--active':account == 't'}").login__user Teacher
+                div(@click="select('a')" v-bind:id="{'login__user--active':account == 'a'}").login__user Admin
+                div(@click="select('c')" v-bind:id="{'login__user--active':account == 'c'}").login__user Case Mgr
+              div.login__input.login__input--select SCHOOL: #[div.select--tiny Yale Secondary]
+              br
+              br
+              input(v-model="lastname" placeholder="Lastname").login__input
+              input(v-model="password" placeholder="Password" type="Password").login__input
+              button.login__input.login__input--submit LOGIN
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js")
+        script.
+          const LOADING_CHAR = 'O'
+          var LoginInp = new Vue({
+            el: '#login__container',
+            data: {
+              selectOn: false,
+              account: 's',
+              lastname: '',
+              password: '',
+              school: 0,
+              remember: false,
+              loading: false,
+              loginButton: "LOGIN",
+              interval: null,
+              notification: ""
+            },
+            methods: {
+              toggleSelect: null,
+              setAcc: null,
+              _unsetLogin: null
+            }
+          })
+
+          /** Methods for the LoginInp */
+
+          LoginInp.toggleSelect = function () {
+            this.selectOn = !this.selectOn
+          }
+
+          LoginInp.select = function (type) {
+            this.account = type
+          }
+
+          LoginInp.login = function () {
+            var self = this
+            var x = 0
+
+            var l = this.lastname
+            var p = this.password
+            var s = this.school
+
+            if (!l || !p || !s) {
+              var notif = ""
+              if (!l) notif = "Please enter a Lastname"
+              if (!p) notif = "Please enter a Password"
+              if (!s) notif = "Please select a School"
+
+              this.notification = notif
+              return
+            }
+
+            // Since everything is set in go for it.
+            this.interval = setInterval(function () {
+              var data = ''
+              for (var i = 0; i < (x % 4); i++) data += LOADING_CHAR
+              x++
+              self.loginButton = data
+            }, 200)
+
+          }
+
+
+          /** Helper functions for LoginInp */
+
+          LoginInp._unsetLogin = function () {
+            clearInterval(this.interval)
+            this.loginButton = "LOGIN"
+          }

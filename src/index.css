@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300|400');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|400');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+    text-align: center;
+    margin: 0;
+}
+#hero__cover{
+    height: 90%;
+    width: 100%;
+    background: #CB356B;  
+    background: -webkit-linear-gradient(to left, #BD3F32, #CB356B);  
+    background: linear-gradient(to left, #BD3F32, #CB356B); 
+    
+}
+    #hero__inner{
+        max-width: 1000px;
+        width: 90%;
+        margin: auto;
+        height: 100%;
+    }
+        .hero__text {
+            font-family: Nunito;
+            font-size: 40px;
+            letter-spacing: 1px;
+            float: left;
+            width: 50%;
+            text-align: left;
+            color: #FFF;
+            padding: 10px 20px;
+            line-height: 40px;
+            margin-top: 150px;
+            min-width: 300px;
+        }
+            .hero__text--logo {
+                color: #FFF;
+            }
+        .hero__subtext {
+            font-family: Open Sans;
+            font-size: 16px;
+            width: 50%;
+            float: left;
+            text-align: left;
+            padding-left: 20px;
+            color: #FFF;
+        }
+        
+        #hero__navbar{
+            width: 100%;
+            height: 50px;
+            padding: 20px 0;
+        }
+            .hero__navWrap{
+                float: right;
+                line-height: 36px;
+                margin-right: 20px;
+            }
+            .hero__navItem{
+                display: inline-block;
+                padding: 0 10px;
+                margin: 0 10px;
+                color: #FFF;
+                font-family: Open Sans;
+                cursor: pointer;
+            }
+                .hero__navItem:hover{
+                    border-bottom: 1px solid #FFF;
+                }
+            #hero__loginBtn{
+                border-radius: 5px;
+                padding: 10px 15px;
+                border: 1px solid #FFF;
+                float: right;
+                font-family: Nunito;
+                font-size: 12px;
+                color: #FFF;
+                cursor: pointer;
+                letter-spacing: 1px;
+                transition: background-color .1s;
+            }
+                #hero__loginBtn:hover{
+                    background-color: #FFF;
+                    color: #000;
+                    transition: background-color .1s;
+                }
+
+
+.info__section {
+    width: 100%;
+    height: 90%;
+    border-top: 1px solid #EEE;
+}
+
+    .info__sectionInner{
+        width: 90%;
+        max-width: 900px;
+        margin: auto;
+        text-align: left;
+    }
+    .info__sectionHeader{
+        font-family: Raleway;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 20px;
+    }
+    .info__sectionBody {
+        font-family: Montserrat;
+        font-size: 14px;
+        width: 500px;
+        margin-top: 30px;
+        line-height: 20px;
+        margin-bottom: 50px;
+    }
+    .info__section--contact{
+        height: 600px;
+    }
+    .inner--feedback{
+        height: auto;
+        min-height: 800px;
+    }
+
+.page__header{
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: Montserrat;
+}
+.page__quote {
+    width: 200px;
+    display: inline-block;
+    margin: auto;
+    margin-right: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 1px 1px #DDD;
+    box-sizing: border-box;
+}
+    .quote__contents {
+        font-family: Nunito;
+        font-weight: 300;
+        font-size: 14px;
+        float: left;
+    }
+    .quote__author {
+        font-family: Nunito;
+        font-weight: 400;
+        color: #999;
+        float: right;
+    }
+
+
+.info__listTitle{
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    color: #999;
+    margin-top: 20px;
+}
+    .info__listItem{
+        font-family: Montserrat;
+        font-size: 12px;
+        margin-left: 15px;
+        margin-top: 5px;
+    }
+
+
+
+
+
+
+
+
+/* 
+
+#main__page {
+    max-width: 1000px;
+    width: 90%;
+    display: inline-block;
+    margin: auto;
+
+    margin-top: 0;
+}
+    #navbar{
+        width: 100%;
+        background-color: #FFF;
+        height: 60px;
+    }
+        .navbar__login{
+            float: right;
+            padding: 10px 15px;
+            border: 1px solid #DDD;
+            border-radius: 5px;
+            background-color: #FFF;
+            letter-spacing: 1px;
+            font-size: 12px;
+            font-family: Open Sans;
+            cursor: pointer;
+            outline: 0;
+            margin: 10px;
+        }
+#info__section {
+    width: 100%;
+    height: 200px;
+    border-top: 1px solid #DDD;
+    float: left;
+    margin-top: 500px;
+}
+    #info__header{
+        font-family: Open Sans;
+        font-size: 20px;
+        text-align: left;
+        float: left;
+        width: 100%;
+        padding: 20px 40px;
+        letter-spacing: 2px;
+        font-weight: 300;
+        margin-top: 30px;
+        color: #BBB;
+    }
+    .info__sectionMain {
+        width: 80%;
+        margin: auto;
+    }
+    .info__sectionHalf{
+        height: 400px;
+        width: 45%;
+        margin: auto;
+        margin-right: 10px;
+        background-color: rgba(214, 69, 65, 0.5);
+        float: left;
+        box-shadow: 0px 1px 1px #999;
+    }
+        .info__sectionHalf--top{
+            float: right;
+            margin-top: 100px;
+            background-color: rgba(214, 69, 65, 0.75);
+        }
+
+
+
+    .info__quote{
+        font-family: Open Sans;
+        font-size: 14px;
+        width: 100%;
+        font-weight: 400;
+        width: 50%;
+        margin: auto;
+        margin-top: 30px;
+    }
+        .info__quoteHeader{
+            width: 50%;
+            margin: auto;
+        }
+        .info__quoteAuthor{
+            font-size: 14px;
+            color: #999;
+            font-family: Open Sans;
+            letter-spacing: 0.5px;
+            float: right;
+        }
+
+
+
+
+
+
+@media (max-width: 600px) {
+    .hero__text {
+        font-size: 30px;
+        line-height: 30px;
+    }
+}
+
+ */

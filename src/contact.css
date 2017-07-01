@@ -1,0 +1,71 @@
+.page__left{
+  float: left;
+  margin-top: 50px;
+  text-align: left;
+  width: 300px;
+}
+
+.contact__input{
+  padding: 10px;
+  box-sizing: border-box;
+  width: 300px;
+  border: 0;
+  font-family: Open Sans;
+  outline: 0;
+  font-size: 12px;
+  background-color: rgba(0,0,0,0.05);
+  border-radius: 3px;
+  resize: none;
+  margin: auto;
+  margin-top: 4px;
+}
+  textarea.contact__input{
+    min-height: 100px;
+  }
+  .contact__input--half{
+    width: 146px;
+    margin: 2px;
+    margin-top: 4px;
+    margin-bottom: 0;
+    display: inline-block;
+  }
+
+  #submit__button{
+    color: #FFF;
+    padding: 10px;
+    width: 200px;
+    margin: auto; 
+    margin-top: 40px;
+    cursor: pointer;
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.8);
+    background: url(/img/paper-plane.png) #EF4836 center left 30px no-repeat;
+    background-size: 25px;
+  }
+
+    #submit__button:active{
+      box-shadow: none;
+    }
+
+.page__right{
+  width: 40%;
+  float: right;
+  margin-top: 40px;
+  font-family: Montserrat;
+  text-align: center;
+}
+  .contact__text{
+    text-align: center;
+    font-size: 14px;
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 10%;
+  }
+
+#big__red{
+  font-size: 100px;
+  color: #EF4836;
+  font-family: Open Sans;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
