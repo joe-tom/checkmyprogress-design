@@ -1,149 +1,60 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400');
+
 body{
     text-align: center;
 }
 
-  /** Styling for the login in the front. */
-  .login__wrap{
-    width: 250px;
-    margin: auto;
-    margin-top: 80px;
-  }
-    /** User selector stylings. */
-    .login__userWrap{
-      width: 148%;
-      margin-left: -24%;
-      float: left;
-      margin-bottom: 20px;
-    }
-      .login__user{
-        padding: 10px 12.5px;
-        display: inline-block;
-        font-size: 10px;
-        font-family: Montserrat;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        background-color: #EEE;
-        box-shadow: 0px 1px 1px #DDD;
-        margin: 0 5px;
-        cursor: pointer;
-          transition: background-color .5s;
-      }
-        .login__user:hover{
-          color: #999;
-        }
-        #login__user--active{
-          background-color: #D64541;
-          color: #FFF;
-          transition: background-color .5s;
-        }
-          /** Override the other hover */
-          .login__user--active:hover{
-            color: #FFF;
-          }
-
-    /** Input stylings. */
-    .login__input{
-      font-weight: 400;
-      width: 100%;
-      margin-top: 15px;
-      padding: 10px;
-      border: 1px solid #EEE;
-      border-radius: 2px;
-      box-shadow: 0px 1px 1px #BBB;
-      font-family: Open Sans;
-      outline: 0;
-      font-size: 12px;
-    }
-      .login__input--submit{
-        width: 65%;
-        color: #D64541;
+    #login__container {
         background-color: #FFF;
-        border: 0;
-        letter-spacing: 1px;
-        box-shadow: 0px 1px 3px #D64541;
+        height: 450px;
+        width: 325px;
         border-radius: 3px;
-        padding: 15px;
-        font-size: 11px;
-        margin-top: 30px;
-        cursor: pointer;
-        transition: background-color .25s;
-      }
-      .login__input--submit:hover{
-        transition: background-color .25s;
-        background-color: #D64541;
-        color: #FFF;
-      }
-      .login__input--select{
-        text-align: left;
-        border-radius: 0;
-        border: 0;
-        letter-spacing: 1px;
-        font-size: 12px;
-        float: left;
-        box-sizing: border-box;
-        font-weight: 600;
-        width: 110%;
-        margin-left: -5%;
-        cursor: pointer;
-      }
-        .select--tiny{
-          font-size: 12px;
-          float: right;
-          color: #999;
-          font-weight: 300;
-        }
-
-
-
-.login__schoolWrap{
-  height: 300px;
-  width: 275px;
-  left: 50%;
-  margin-left: -137.5px;
-  margin-top: 105px;
-  position: absolute;
-  background-color: #FFF;
-  border-radius: 0;
-  box-shadow: 0px 2px 3px #DDD;
-  padding: 10px 0;
-    overflow-y: scroll;
-    display: none;
-}
-  .login__school{
-    font-family: Montserrat;
-    font-size: 12px;
-    padding: 10px 5px;
-    box-sizing: border-box;
-    cursor: pointer;
-  }
-    .login__school:hover{
-      background-color: #EEE;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -225px;
+        margin-left: -162.5px;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    #login__logo{
+        font-family: Montserrat;
+        font-size: 30px;
+        letter-spacing: 1px;
+        text-align: left;
+        padding: 15px;
+        padding-bottom: 5px;
+    }
+        #login__nub{
+            width: 40px;
+            height: 5px;
+            background-color: #CB356B;
+            margin-left: 15px;
+            margin-bottom: 20px;
+        }
+    .login__inp{
+        padding: 12.5px 15px;
+        width: calc(100% - 30px);
+        box-sizing: border-box;
+        margin-top: 15px;
+        font-size: 12px;
+        border-radius: 5px;
+        border: 0;
+        background-color: #EEE;
+        font-family: Montserrat;
+        outline: 0;
+    }
+        .login__inp--submit{
+            cursor: pointer;
+            width: 60%;
+            margin: auto;
+            margin-top: 50px;
+            letter-spacing: 1px;
+            color: #FFF;
+            background-color: #CB356B;
+            box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+        }
+        .login__inp--submit:active{
+            box-shadow: none;
+        }
