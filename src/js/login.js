@@ -1,3 +1,5 @@
+const BASE_URL = 'https://checkmyprogress.ca'
+
 
 /**
  * Performs an AJAX request on the current Checkmyprogress API.
@@ -40,8 +42,13 @@ var Ajax = (e) => {
 var Login = new Vue({
     el: '#login__container',
     data: {
+        lists: {
+            districts: [],
+            schools: []
+        }
         district: 0,
         school: 0,
+        type: '',
         lastname: '',
         password: '',
     },
@@ -54,22 +61,44 @@ var Login = new Vue({
 
 
 Login.login = function () {
+    var packet = {
+        "apiRequest": "loginCheck",
+        "userType": this.type,
+        "districtAutoID": this.district,
+        "schoolAutoID": this.school,
+        "username": this.lastname,
+        "password": this.password
+    }
 
-}
 
-Login.fetch = function () {
-    Ajax
-    .get({
-        type: 'GET',
-        url: '/districts'
+    Ajax({
+        type: 'POST',
+        url: BASE_URL + '/api/login.php',
+        data: JSON.stringify(packet)
     })
     .then(data => {
 
     })
-    .catch(request => {
+    .catch(req => {
 
     })
 
+}
+
+Login.fetch = function () {
+    var self = this
+
+    Ajax({
+        type: 'POST',
+        url: BASE_URL + '/api/login.php',
+        data: '{appRequest:"getDistrictsSchools"}'
+    })
+    .then(data => {
+        self.lists = data
+    })
+    .catch(req => {
+
+    })
 }
 
 
