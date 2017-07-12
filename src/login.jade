@@ -1,13 +1,19 @@
 html
     head
-        link(rel="stylesheet" href="./login.css")
+        link(rel="stylesheet" href="/css/login.css")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title CheckmyProgress Login
     body
         #login__container
             #login__logo LOGIN
             #login__nub
             br
+            div(v-for="type in ACCOUNT_TYPES").login__account {{type}}
+            br
+            select.login__inp
+                option(v-for="dist in lists.districts").login__inp.login__inp--option {{dist.fullName}}
             input(placeholder="Lastname").login__inp
             input(placeholder="Password" type="password").login__inp
             input(value="LOGIN" type="submit").login__inp.login__inp--submit
         script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js")
-        script(src="login.js")
+        script(src="/js/login.js")

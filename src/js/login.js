@@ -1,5 +1,11 @@
 const BASE_URL = 'https://checkmyprogress.ca'
 
+const ACCOUNT_TYPES = [
+    'Student / Parent',
+    'Teacher',
+    'Case Mgr',
+    'Admin'
+]
 
 /**
  * Performs an AJAX request on the current Checkmyprogress API.
@@ -13,6 +19,10 @@ const BASE_URL = 'https://checkmyprogress.ca'
 var Ajax = (e) => {
     var request = new XMLHttpRequest()
     request.open(e.type, e.url , true)
+
+    if (e.type == 'POST') {
+        request.setRequestHeader('Content-Type', 'application/json')
+    }
 
     return new Promise((resolve, reject) => {
 
@@ -28,7 +38,7 @@ var Ajax = (e) => {
             reject(request)
         }
 
-        request.send()
+        request.send(e.data)
     })
 }
 
@@ -42,10 +52,11 @@ var Ajax = (e) => {
 var Login = new Vue({
     el: '#login__container',
     data: {
+        ACCOUNT_TYPES: ACCOUNT_TYPES,
         lists: {
             districts: [],
             schools: []
-        }
+        },
         district: 0,
         school: 0,
         type: '',
@@ -62,12 +73,12 @@ var Login = new Vue({
 
 Login.login = function () {
     var packet = {
-        "apiRequest": "loginCheck",
-        "userType": this.type,
-        "districtAutoID": this.district,
-        "schoolAutoID": this.school,
-        "username": this.lastname,
-        "password": this.password
+        '!apiRequest'       : 'loginCheck',
+        '!userType'         : this.type,
+        '!districtAutoID'   : this.district,
+        '!schoolAutoID'     : this.school,
+        '!username'         : this.lastname,
+        '!password'         : this.password
     }
 
 
@@ -91,10 +102,11 @@ Login.fetch = function () {
     Ajax({
         type: 'POST',
         url: BASE_URL + '/api/login.php',
-        data: '{appRequest:"getDistrictsSchools"}'
+        data: JSON.stringify({appRequest: 'getDistrictsSchools'})
     })
     .then(data => {
-        self.lists = data
+        data = JSON.parse(data)
+        data.districts.forEach(dist => (self.lists.districts.push(dist)))
     })
     .catch(req => {
 
