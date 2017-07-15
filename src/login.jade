@@ -4,16 +4,22 @@ html
         meta(name="viewport" content="width=device-width, initial-scale=1")
         title CheckmyProgress Login
     body
-        #login__container
+        form#login__container(v-on:submit.prevent="login")
             #login__logo LOGIN
             #login__nub
             br
-            div(v-for="type in ACCOUNT_TYPES").login__account {{type}}
+            div(v-for="type in ACCOUNT_TYPES" v-on:click="select(type)" v-bind:class="{'login__account--selected': type.selected}").login__account {{type.name}}
             br
-            select.login__inp
-                option(v-for="dist in lists.districts").login__inp.login__inp--option {{dist.fullName}}
-            input(placeholder="Lastname").login__inp
-            input(placeholder="Password" type="password").login__inp
+            select.login__inp(v-model="district")
+                option(v-for="dist in lists.districts" v-bind:value="dist.autoID").login__inp.login__inp--option {{dist.fullName}}
+            select.login__inp(v-show="district" v-model="school")
+                option(v-for="school in lists.schools" v-bind:value="school.autoID" v-if="school.districtAutoID == district").login__inp.login__inp--option {{school.fullName}}
+            input(v-model="lastname" placeholder="Lastname").login__inp
+            input(v-model="password" placeholder="Password" type="password").login__inp
             input(value="LOGIN" type="submit").login__inp.login__inp--submit
+
+        footer
+            img.logo
+            span.logo__text &#169; Checkmymark Consulting Ltd. 2017
         script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js")
         script(src="/js/login.js")

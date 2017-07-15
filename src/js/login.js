@@ -1,11 +1,23 @@
 const BASE_URL = 'https://checkmyprogress.ca'
 
-const ACCOUNT_TYPES = [
+const ACCOUNT_LOGIN_TYPES = [
+    'student',
+    'teacher',
+    'caseManager',
+    'admin'
+]
+
+var ACCOUNT_TYPES = [
     'Student / Parent',
     'Teacher',
     'Case Mgr',
     'Admin'
 ]
+.map((type, i) => ({
+    name: type,
+    selected: false,
+    login: ACCOUNT_LOGIN_TYPES[i]
+}))
 
 /**
  * Performs an AJAX request on the current Checkmyprogress API.
@@ -57,8 +69,8 @@ var Login = new Vue({
             districts: [],
             schools: []
         },
-        district: 0,
-        school: 0,
+        district: false,
+        school: false,
         type: '',
         lastname: '',
         password: '',
@@ -69,16 +81,21 @@ var Login = new Vue({
     }
 })
 
-
+Login.select = function (obj) {
+    this.type = obj.login
+    this.ACCOUNT_TYPES.forEach(type => {
+        type.selected = (type.name == obj.name)
+    })
+}
 
 Login.login = function () {
     var packet = {
-        '!apiRequest'       : 'loginCheck',
-        '!userType'         : this.type,
-        '!districtAutoID'   : this.district,
-        '!schoolAutoID'     : this.school,
-        '!username'         : this.lastname,
-        '!password'         : this.password
+        'apiRequest'       : 'loginCheck',
+        'userType'         : this.type,
+        'districtAutoID'   : this.district,
+        'schoolAutoID'     : this.school,
+        'username'         : this.lastname,
+        'password'         : this.password
     }
 
 
@@ -107,6 +124,7 @@ Login.fetch = function () {
     .then(data => {
         data = JSON.parse(data)
         data.districts.forEach(dist => (self.lists.districts.push(dist)))
+        data.schools.forEach(dist => (self.lists.schools.push(dist)))
     })
     .catch(req => {
 
