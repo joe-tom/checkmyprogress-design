@@ -8,11 +8,11 @@ html
             #login__logo LOGIN
             #login__nub
             br
-            div(v-for="type in ACCOUNT_TYPES" v-on:click="select(type)" v-bind:class="{'login__account--selected': type.selected}").login__account {{type.name}}
+            div(v-for="obj in ACCOUNT_TYPES" v-on:click="select(obj)" v-bind:class="{'login__account--selected': (obj.login == type)}").login__account {{obj.name}}
             br
             select.login__inp(v-model="district")
                 option(v-for="dist in lists.districts" v-bind:value="dist.autoID").login__inp.login__inp--option {{dist.fullName}}
-            select.login__inp(v-show="district" v-model="school")
+            select.login__inp(v-show="district" v-model="school" size="2")
                 option(v-for="school in lists.schools" v-bind:value="school.autoID" v-if="school.districtAutoID == district").login__inp.login__inp--option {{school.fullName}}
             input(v-model="lastname" placeholder="Lastname").login__inp
             input(v-model="password" placeholder="Password" type="password").login__inp

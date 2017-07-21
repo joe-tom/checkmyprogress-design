@@ -1,6 +1,8 @@
-const BASE_URL = 'https://checkmyprogress.ca'
 
-const ACCOUNT_LOGIN_TYPES = [
+    
+var BASE_URL = 'https://checkmyprogress.ca'
+
+var ACCOUNT_LOGIN_TYPES = [
     'student',
     'teacher',
     'caseManager',
@@ -13,7 +15,8 @@ var ACCOUNT_TYPES = [
     'Case Mgr',
     'Admin'
 ]
-.map((type, i) => ({
+
+ACCOUNT_TYPES = ACCOUNT_TYPES.map((type, i) => ({
     name: type,
     selected: false,
     login: ACCOUNT_LOGIN_TYPES[i]
@@ -71,7 +74,7 @@ var Login = new Vue({
         },
         district: false,
         school: false,
-        type: '',
+        type: document.location.hash.substr(1),
         lastname: '',
         password: '',
     },
@@ -83,9 +86,7 @@ var Login = new Vue({
 
 Login.select = function (obj) {
     this.type = obj.login
-    this.ACCOUNT_TYPES.forEach(type => {
-        type.selected = (type.name == obj.name)
-    })
+    document.location.hash = obj.login
 }
 
 Login.login = function () {
@@ -105,7 +106,9 @@ Login.login = function () {
         data: JSON.stringify(packet)
     })
     .then(data => {
-
+        if (data.token) {
+            localstorage[token] = token
+        }
     })
     .catch(req => {
 

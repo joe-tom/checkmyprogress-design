@@ -1,7 +1,7 @@
 html
     head
-        link(rel="stylesheet" href="./index.css")
-        link(rel="stylesheet" href="./contact.css")
+        link(rel="stylesheet" href="./css/index.css")
+        link(rel="stylesheet" href="./css/contact.css")
         meta(name="viewport" content="width=device-width, initial-scale=1")
         title CheckmyProgress
     body
@@ -14,7 +14,51 @@ html
                         .hero__navItem About
                         .hero__navItem Contact
                 .hero__text Welcome to #[strong.hero__text--logo CheckmyProgress #[sub(style="font-size:12px;") &beta;eta]] 
-                .hero__subtext Made By Educators For Educators 
+                .hero__subtext Made By Educators For Educators
+        .info__section
+            .info__sectionInner
+                .info__sectionHeader Contact
+                .page__left#contact__form
+                    input(v-model="form.name" type="text" placeholder="Name").contact__input
+                    input(v-model="form.email" type="text" placeholder="Email").contact__input
+                    input(v-model="form.school" type="text" placeholder="School (Optional)").contact__input.contact__input--half
+                    input(v-model="form.district" type="text" placeholder="District (Optional)").contact__input.contact__input--half
+                    input(v-model="form.phone" type="text" placeholder="Phone (Optional)").contact__input
+                    input(v-model="form.subject" type="text" placeholder="Subject").contact__input
+                    textarea(v-model="form.message" type="text" placeholder="Message").contact__input
+                    .contact__inputWrap
+                        input(type="button" v-bind:value="sendVal" @click="send()" v-bind:disabled="disabled").contact__input#submit__button
+                .page__right
+        script(src="/js/a.min.js")
+        script(src="/js/contact.js")
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+
         .info__section
             .info__sectionInner
                 .info__sectionHeader Educators
@@ -54,7 +98,7 @@ html
         .info__section.info__section--contact
             .info__sectionInner
                 .info__sectionHeader Contact
-                .page__left
+                .page__left#contact__form
                     input(v-model="name" type="text" placeholder="Name").contact__input
                     br
                     input(v-model="email" type="text" placeholder="Email").contact__input
@@ -74,5 +118,5 @@ html
                     #big__red * 
                     .page__text.contact__text Please note that if you are a parent or student having trouble logging in you must contact your teacher for your password. Teachers should contact their school administrator.
                     .page__header.contact__text We are not able to respond to emails regarding login problems.
-        script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js")
-        script(src="feedback.js")
+        script(src="/js/a.min.js")
+        script(src="/js/feedback.js")
