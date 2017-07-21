@@ -8,7 +8,8 @@ html
         #hero__cover
             #hero__inner
                 #hero__navbar
-                    #hero__loginBtn LOGIN
+                    a(href="/login.jade" title="LOGIN")
+                        #hero__loginBtn LOGIN
                     .hero__navWrap
                         .hero__navItem Educators
                         .hero__navItem About
@@ -28,7 +29,11 @@ html
                     textarea(v-model="form.message" type="text" placeholder="Message").contact__input
                     .contact__inputWrap
                         input(type="button" v-bind:value="sendVal" @click="send()" v-bind:disabled="disabled").contact__input#submit__button
-                .page__right
+                
+                .page__right#page__right
+                    #big__red * 
+                    .page__text.contact__text Please note that if you are a parent or student having trouble logging in you must contact your teacher for your password. Teachers should contact their school administrator.
+                    .page__header.contact__text We are not able to respond to emails regarding login problems.
         script(src="/js/a.min.js")
         script(src="/js/contact.js")
 
