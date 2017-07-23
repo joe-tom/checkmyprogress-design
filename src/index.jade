@@ -17,6 +17,19 @@ html
                 .hero__text Welcome to #[strong.hero__text--logo CheckmyProgress #[sub(style="font-size:12px;") &beta;eta]] 
                 .hero__subtext Made By Educators For Educators
         .info__section
+            .info__sectionInner.inner--feedback
+                .info__sectionHeader Feedback
+                br
+                .page__header Teachers
+                .page__quote(v-for="quote in quotes.teacher")
+                    .quote__contents {{quote.contents}}
+                    .quote__author &mdash;{{quote.author}}
+                .page__header Parents
+                .page__quote(v-for="quote in quotes.parents")
+                    .quote__contents {{quote.contents}}
+                    .quote__author &mdash;{{quote.author}}
+
+        .info__section
             .info__sectionInner
                 .info__sectionHeader Contact
                 .page__left#contact__form
@@ -36,3 +49,67 @@ html
                     .page__header.contact__text We are not able to respond to emails regarding login problems.
         script(src="/js/a.min.js")
         script(src="/js/contact.js")
+        script(src="/js/feedback.js")
+//
+
+        .info__section
+            .info__sectionInner
+                .info__sectionHeader Educators
+                .info__sectionBody.
+                    Checkmyprogress has been designed to be easy to use, powerful, and lightweight.There is no software needed to be installed and anyone with an internet connection can use the powerful, web based program.
+                    #[br]#[br]
+                    Checkmyprogress's focus is to provide high quality, easy to use marking software that is simple to use and access.
+                .info__listTitle Improves Communication
+                .info__listItem - Instant and continuous feedback
+                .info__listItem - Access to parent/student emails
+                .info__listItem - Greatly increases school website profile among students and parents
+
+                .info__listTitle Advantages for Teachers
+                .info__listItem - Supports traditional and performance based assessment
+                .info__listItem - Email interims (individually or as a class) at the push of a button
+                .info__listItem - Email personalized messages home for an individual student or an entire class
+                .info__listItem - Powerful PDF report generation
+                .info__listItem - Flexible weighting system
+                .info__listItem - Students/parents aware sooner of missing work and academic performance
+                .info__listItem - Easy to use - no technical knowledge required to use
+                .info__listItem - Secure website
+                .info__listItem - Data backed up regularly
+                .info__listItem - Flexible to accommodate unique school and district needs
+
+        .info__section.info__section--feedback
+            .info__sectionInner.inner--feedback
+                .info__sectionHeader Feedback
+                br
+                .page__header Teachers
+                .page__quote(v-for="quote in teacherQuotes")
+                    .quote__contents {{quote.contents}}
+                    .quote__author &mdash;{{quote.author}}
+                .page__header Parents
+                .page__quote(v-for="quote in parentQuotes")
+                    .quote__contents {{quote.contents}}
+                    .quote__author &mdash;{{quote.author}}
+        .info__section.info__section--contact
+            .info__sectionInner
+                .info__sectionHeader Contact
+                .page__left#contact__form
+                    input(v-model="name" type="text" placeholder="Name").contact__input
+                    br
+                    input(v-model="email" type="text" placeholder="Email").contact__input
+                    br
+                    br
+                    input(v-model="school" type="text" placeholder="School (Optional)").contact__input.contact__input--half
+                    input(v-model="district" type="text" placeholder="District (Optional)").contact__input.contact__input--half
+                    br
+                    input(v-model="phone" type="text" placeholder="Phone (Optional)").contact__input
+                    br
+                    input(v-model="subject" type="text" placeholder="Subject").contact__input
+                    br
+                    textarea(v-model="message" type="text" placeholder="Message").contact__input
+                    br
+                    input(type="button" value="Send!" @click="send()").contact__input#submit__button
+                .page__right
+                    #big__red * 
+                    .page__text.contact__text Please note that if you are a parent or student having trouble logging in you must contact your teacher for your password. Teachers should contact their school administrator.
+                    .page__header.contact__text We are not able to respond to emails regarding login problems.
+        script(src="/js/a.min.js")
+        script(src="/js/feedback.js")

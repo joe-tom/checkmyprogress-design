@@ -139,7 +139,7 @@ body {
 
 .info__section {
     width: 100%;
-    height: 90%;
+    min-height: 90%;
     border-top: 1px solid #EEE;
 }
 
@@ -155,6 +155,7 @@ body {
         text-transform: uppercase;
         letter-spacing: 1px;
         margin-top: 20px;
+        text-align: left;
     }
     .info__sectionBody {
         font-family: Montserrat;
@@ -169,7 +170,8 @@ body {
     }
     .inner--feedback{
         height: auto;
-        min-height: 800px;
+        padding-bottom: 30px;
+        text-align: center;
     }
 
 .page__header{
@@ -177,12 +179,14 @@ body {
     margin-top: 15px;
     margin-bottom: 15px;
     font-family: Montserrat;
+    text-align: left;
 }
 .page__quote {
     width: 200px;
     display: inline-block;
     margin: auto;
-    margin-right: 5px;
+    margin-right: 10px;
+    margin-top: 5px;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0px 1px 1px #DDD;

@@ -35,9 +35,11 @@ const TEACHER_QUOTES = [
 
 
 new Vue({
-  el: '.info__section--feedback',
+  el: '.inner--feedback',
   data: {
-    teacherQuotes: TEACHER_QUOTES,
-    parentQuotes: PARENT_QUOTES
+    quotes: {
+      teacher: TEACHER_QUOTES,
+      parents: PARENT_QUOTES
+    }
   }
 })
