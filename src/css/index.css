@@ -120,23 +120,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .info__section {
     width: 100%;
     min-height: 90%;
@@ -160,7 +143,7 @@ body {
     .info__sectionBody {
         font-family: Montserrat;
         font-size: 14px;
-        width: 500px;
+        max-width: 500px;
         margin-top: 30px;
         line-height: 20px;
         margin-bottom: 50px;
