@@ -109,6 +109,7 @@ Login.login = function () {
         if (data.token) {
             localstorage[token] = token
         }
+        document.location.reload()
     })
     .catch(req => {
 

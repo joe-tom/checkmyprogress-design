@@ -1,4 +1,44 @@
 
+/**
+ * Performs an AJAX request on the current Checkmyprogress API.
+ * @param  {Object} e - contains all the information:
+ *     @key url - the URL of the AJAX request.
+ *     @key type - the type of AJAX request.
+ *     @key data - the data if this a post request.
+ *     
+ * @return {Promise}
+ */
+var Ajax = (e) => {
+    var request = new XMLHttpRequest()
+    request.open(e.type, e.url , true)
+
+    if (e.type == 'POST') {
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
+    }
+
+    return new Promise((resolve, reject) => {
+
+        request.onload = () => {
+          if (request.status >= 200 && request.status < 400) {
+            resolve(request.responseText)
+          } else {
+            reject(request)
+          }
+        }
+
+        request.onerror = () => {
+            reject(request)
+        }
+
+        request.send(e.data)
+    })
+}
+
+
+
+
+
+
 const LOAD_CHARACTER = 'O'
 
 var Contact = new Vue({
@@ -11,7 +51,8 @@ var Contact = new Vue({
             district: '',
             phone: '',
             subject: '',
-            message: ''
+            message: '',
+            contactSubmit: 'Send Message'
         },
         sendVal: 'SEND',
         disabled: false,
@@ -80,4 +121,25 @@ Contact.endL = function () {
 
 Contact.report = function () {
 
+}
+Contact.check = function () {
+    return new Promise ((resolve, reject) => {
+        resolve()
+    }) 
+}
+
+
+Contact.post = function () {
+    var data = ''
+
+    for (var type in this.form) {
+        data += (type + '=' + this.form[type] + '&')
+    }
+    data = data.slice(0,-1)
+    console.log(data)
+    return Ajax({
+        url: '/login.post',
+        type: 'POST',
+        data: data
+    })
 }

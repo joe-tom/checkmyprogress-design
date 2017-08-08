@@ -11,13 +11,13 @@ html
                     a(href="/login.jade" title="LOGIN")
                         #hero__loginBtn LOGIN
                     .hero__navWrap
-                        .hero__navItem Educators
-                        .hero__navItem About
-                        .hero__navItem Contact
+                        a(href="#educators").hero__navItem Educators
+                        a(href="#about").hero__navItem About
+                        a(href="#contact").hero__navItem Contact
                 .hero__text Welcome to #[strong.hero__text--logo CheckmyProgress #[sub(style="font-size:12px;") &beta;eta]] 
                 .hero__subtext Made By Educators For Educators
 
-        .info__section
+        .info__section#educators
             .info__sectionInner
                 .info__sectionHeader Educators
                 .info__sectionBody.
@@ -43,7 +43,7 @@ html
                 br
                 br
 
-        .info__section
+        .info__section#about
             .info__sectionInner.inner--feedback
                 .info__sectionHeader Feedback
                 br
@@ -56,7 +56,7 @@ html
                     .quote__contents {{quote.contents}}
                     .quote__author &mdash;{{quote.author}}
 
-        .info__section
+        .info__section#contact
             .info__sectionInner
                 .info__sectionHeader Contact
                 .page__left#contact__form
