@@ -36,6 +36,7 @@ var Ajax = (e) => {
     request.open(e.type, e.url , true)
 
     if (e.type == 'POST') {
+    } else { 
         request.setRequestHeader('Content-Type', 'application/json')
     }
 
@@ -43,7 +44,7 @@ var Ajax = (e) => {
 
         request.onload = () => {
           if (request.status >= 200 && request.status < 400) {
-            resolve(request.responseText)
+            resolve(request.response)
           } else {
             reject(request)
           }
@@ -106,10 +107,12 @@ Login.login = function () {
         data: JSON.stringify(packet)
     })
     .then(data => {
+        data = JSON.parse(data)
+        console.log(data)
         if (data.token) {
-            localstorage[token] = token
+            localStorage['token'] = data.token
+            document.location.reload()
         }
-        document.location.reload()
     })
     .catch(req => {
 

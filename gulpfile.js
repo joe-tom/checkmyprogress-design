@@ -29,7 +29,7 @@ gulp.task('scripts', cb => {
 gulp.task('jade', cb => {
     pump([
         gulp.src('./src/*.jade'),
-        jade({locals:{}}),
+        jade({locals:{}, pretty: true}),
         gulp.dest('./build/')
     ], cb)
 })
