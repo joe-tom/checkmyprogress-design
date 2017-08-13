@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./login.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>CheckmyProgress Login</title>
+  </head>
+  <body>
+    <form id="login__container" v-on:submit.prevent="login">
+      <div id="login__logo">LOGIN</div>
+      <div id="login__nub"></div><br/>
+      <div v-for="obj in ACCOUNT_TYPES" v-on:click="select(obj)" v-bind:class="{'login__account--selected': (obj.login == type)}" class="login__account">{{obj.name}}</div><br/>
+      <select v-model="district" class="login__inp">
+        <option v-for="dist in lists.districts" v-bind:value="dist.autoID" class="login__inp login__inp--option">{{dist.fullName}}</option>
+      </select>
+      <select v-show="district" v-model="school" size="2" class="login__inp">
+        <option v-for="school in lists.schools" v-bind:value="school.autoID" v-if="school.districtAutoID == district" class="login__inp login__inp--option">{{school.fullName}}</option>
+      </select>
+      <input v-model="lastname" placeholder="Lastname" class="login__inp"/>
+      <input v-model="password" placeholder="Password" type="password" class="login__inp"/>
+      <input value="LOGIN" type="submit" class="login__inp login__inp--submit"/>
+    </form>
+    <footer><img class="logo"/><span class="logo__text">&#169; Checkmymark Consulting Ltd. 2017</span></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+    <script src="./bundle.js"></script>
+  </body>
+</html>

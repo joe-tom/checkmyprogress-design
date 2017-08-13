@@ -1,0 +1,89 @@
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400');
+
+body{
+    text-align: center;
+}
+
+    #login__container {
+        background-color: #FFF;
+        height: 450px;
+        width: 325px;
+        border-radius: 3px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -225px;
+        margin-left: -162.5px;
+    }
+    #login__logo{
+        font-family: Montserrat;
+        font-size: 30px;
+        letter-spacing: 1px;
+        text-align: left;
+        padding: 15px;
+        padding-bottom: 5px;
+    }
+        #login__nub{
+            width: 40px;
+            height: 5px;
+            background-color: #D64541;
+            margin-left: 15px;
+            margin-bottom: 20px;
+        }
+    .login__inp{
+        padding: 12.5px 15px;
+        width: calc(100% - 30px);
+        box-sizing: border-box;
+        margin-top: 15px;
+        font-size: 12px;
+        border-radius: 5px;
+        border: 0;
+        background-color: #EEE;
+        font-family: Montserrat;
+        outline: 0;
+    }
+        .login__inp--option{
+            background-color: #FFF;
+            text-align: center;
+            margin: 10px;
+        }
+        .login__inp--submit{
+            cursor: pointer;
+            width: 60%;
+            margin: auto;
+            margin-top: 50px;
+            letter-spacing: 1px;
+            color: #FFF;
+            background-color: #D64541;
+            box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+        }
+        .login__inp--submit:active{
+            box-shadow: none;
+        }
+    .login__account{
+        font-size: 10px;
+        font-family: Montserrat;
+        text-align: center;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin: 3px;
+        padding: 10px 5px;
+        border-radius: 3px;
+        background-color: #F9f9f9;
+        box-shadow: 0px 1px 1px #DDD;
+        cursor: pointer;
+    }
+    .logo__text{
+        font-family: Montserrat;
+        font-size: 12px;
+        position: fixed;
+        bottom: 10px;
+        left: 0px;
+        width: 100%;
+    }
+    .login__account--selected{
+        background-color: #999;
+    }

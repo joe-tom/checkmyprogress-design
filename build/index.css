@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300|400');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|400');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+a{
+    text-decoration: none;
+}
+body {
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    overflow: scroll;
+}
+#hero__cover{
+    height: 90%;
+    width: 100%;
+    background: #CB356B;  
+    background: -webkit-linear-gradient(to left, #BD3F32, #CB356B);  
+    background: linear-gradient(to left, #BD3F32, #CB356B); 
+}
+    #hero__inner{
+        max-width: 1000px;
+        width: 90%;
+        margin: auto;
+        height: 100%;
+    }
+        .hero__text {
+            font-family: Nunito;
+            font-size: 40px;
+            letter-spacing: 1px;
+            float: left;
+            width: 50%;
+            text-align: left;
+            color: #FFF;
+            padding: 10px 20px;
+            line-height: 40px;
+            margin-top: 150px;
+            min-width: 300px;
+        }
+            .hero__text--logo {
+                color: #FFF;
+            }
+        .hero__subtext {
+            font-family: Open Sans;
+            font-size: 16px;
+            width: 50%;
+            float: left;
+            text-align: left;
+            padding-left: 20px;
+            color: #FFF;
+        }
+        
+        #hero__navbar{
+            width: 100%;
+            height: 50px;
+            padding: 20px 0;
+        }
+            .hero__navWrap{
+                float: right;
+                line-height: 36px;
+                margin-right: 20px;
+            }
+            .hero__navItem{
+                display: inline-block;
+                padding: 0 10px;
+                margin: 0 10px;
+                color: #FFF;
+                font-family: Open Sans;
+                cursor: pointer;
+            }
+                .hero__navItem:hover{
+                    border-bottom: 1px solid #FFF;
+                }
+            #hero__loginBtn{
+                border-radius: 5px;
+                padding: 10px 15px;
+                border: 1px solid #FFF;
+                float: right;
+                font-family: Nunito;
+                font-size: 12px;
+                color: #FFF;
+                cursor: pointer;
+                letter-spacing: 1px;
+                transition: background-color .1s;
+            }
+                #hero__loginBtn:hover{
+                    background-color: #FFF;
+                    color: #000;
+                    transition: background-color .1s;
+                }
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .hero__navItem {
+        margin: 0;
+        font-size: 13px;
+    }
+    .hero__text{
+        font-size: 30px;
+    }
+    #page__right{
+        float: left;
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.info__section {
+    width: 100%;
+    min-height: 90%;
+    border-top: 1px solid #EEE;
+}
+
+    .info__sectionInner{
+        width: 90%;
+        max-width: 900px;
+        margin: auto;
+        text-align: left;
+    }
+    .info__sectionHeader{
+        font-family: Raleway;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 20px;
+        text-align: left;
+    }
+    .info__sectionBody {
+        font-family: Montserrat;
+        font-size: 14px;
+        max-width: 500px;
+        margin-top: 30px;
+        line-height: 20px;
+        margin-bottom: 50px;
+    }
+    .info__section--contact{
+        height: 600px;
+    }
+    .inner--feedback{
+        height: auto;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+
+.page__header{
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: Montserrat;
+    text-align: left;
+}
+.page__quote {
+    width: 200px;
+    display: inline-block;
+    margin: auto;
+    margin-right: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 1px 1px #DDD;
+    box-sizing: border-box;
+}
+    .quote__contents {
+        font-family: Nunito;
+        font-weight: 300;
+        font-size: 14px;
+        float: left;
+    }
+    .quote__author {
+        font-family: Nunito;
+        font-weight: 400;
+        color: #999;
+        float: right;
+    }
+
+
+.info__listTitle{
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    color: #999;
+    margin-top: 20px;
+}
+    .info__listItem{
+        font-family: Montserrat;
+        font-size: 12px;
+        margin-left: 15px;
+        margin-top: 5px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.page__left{
+  float: left;
+  margin-top: 50px;
+  text-align: left;
+  width: 300px;
+}
+
+.contact__input{
+  padding: 10px;
+  box-sizing: border-box;
+  width: 300px;
+  border: 0;
+  font-family: Open Sans;
+  outline: 0;
+  font-size: 12px;
+  background-color: rgba(0,0,0,0.05);
+  border-radius: 3px;
+  resize: none;
+  margin: auto;
+  margin-top: 4px;
+}
+  textarea.contact__input{
+    min-height: 100px;
+  }
+  .contact__input--half{
+    width: 146px;
+    margin: 2px;
+    margin-top: 4px;
+    margin-bottom: 0;
+    display: inline-block;
+  }
+
+  .contact__inputWrap{
+    width: 100%;
+    text-align: center;
+  }
+
+  #submit__button{
+    color: #FFF;
+    padding: 10px;
+    width: 200px;
+    margin: auto; 
+    margin-top: 40px;
+    cursor: pointer;
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.8);
+    background: url(/img/paper-plane.png) #D24D57 center left 40px no-repeat;
+    background-size: 25px;
+    letter-spacing: 1px;
+    font-size: 14px;
+  }
+
+    #submit__button:active{
+      box-shadow: none;
+    }
+
+.page__right{
+  width: 40%;
+  float: right;
+  margin-top: 40px;
+  font-family: Montserrat;
+  text-align: center;
+}
+  .contact__text{
+    text-align: center;
+    font-size: 14px;
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 10%;
+  }
+
+#big__red{
+  font-size: 100px;
+  color: #EF4836;
+  font-family: Open Sans;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
